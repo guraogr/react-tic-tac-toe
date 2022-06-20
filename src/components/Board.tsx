@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Squares } from '../type/game';
 import Square from './Square';
 
 const Board = () => {
-  const [squares, setSquares] = useState<string[] | null[]>(Array(9).fill(null));
+  const [squares, setSquares] = useState<Squares>(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState<boolean>(true);
 
   const onSquareClick = (i: number) => {
