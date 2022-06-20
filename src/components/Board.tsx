@@ -7,7 +7,7 @@ const Board = () => {
 
   const onSquareClick = (i: number) => {
     const copySquares = squares.slice();
-    copySquares[i] = 'X';
+    copySquares[i] = xIsNext ? 'X' : 'O';
     setSquares(copySquares);
     setXIsNext(!xIsNext);
   };
