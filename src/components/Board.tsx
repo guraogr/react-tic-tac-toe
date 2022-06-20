@@ -3,33 +3,16 @@ import calculateWinner from '../helper/calculateWinner';
 import { Squares } from '../type/game';
 import Square from './Square';
 
-const Board = () => {
-  const [squares, setSquares] = useState<Squares>(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState<boolean>(true);
+interface Props {
+  squares: Squares;
+  onClick: (i: number) => void;
+}
 
-  const onSquareClick = (i: number) => {
-    const copySquares = squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    copySquares[i] = xIsNext ? 'X' : 'O';
-    setSquares(copySquares);
-    setXIsNext(!xIsNext);
-  };
-
-  const renderSquare = (i: number) => <Square value={squares[i]} onClick={() => onSquareClick(i)} />;
-
-  const winner = calculateWinner(squares);
-  let status;
-  if (winner) {
-    status = `Winner: ${winner}`;
-  } else {
-    status = `Next player: ${xIsNext ? 'X' : 'O'}`;
-  }
+const Board = ({ squares, onClick }: Props) => {
+  const renderSquare = (i: number) => <Square value={squares[i]} onClick={() => onClick(i)} />;
 
   return (
     <div>
-      <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
