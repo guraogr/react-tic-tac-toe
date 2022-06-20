@@ -26,7 +26,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "commitmsg": "commitlint"
   },
   "browserslist": {
     "production": [
