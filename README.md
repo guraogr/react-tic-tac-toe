@@ -14,6 +14,10 @@ npx create-react-app react-tutorial-tic-tac-toe --template typescript
 
 ### Prettier
 
+### CommitLint
+
+### Storybook
+
 ### Husky
 
 ###
