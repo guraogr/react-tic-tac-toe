@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import calculateWinner from '../helper/calculateWinner';
 import { Squares } from '../type/game';
 import Square from './Square';
 
@@ -15,7 +16,13 @@ const Board = () => {
 
   const renderSquare = (i: number) => <Square value={squares[i]} onClick={() => onSquareClick(i)} />;
 
-  const status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = `Winner: ${winner}`;
+  } else {
+    status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+  }
 
   return (
     <div>
