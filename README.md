@@ -1,25 +1,7 @@
 # 概要
 
-React TypeScript の開発環境を作成した
+React チュートリアルを TypeScript を導入して行う<br><br>
 
-## 環境作成の内訳
+目的: React の基本的な仕様について理解する<br><br>
 
-### create-react-app
-
-```
-npx create-react-app react-tutorial-tic-tac-toe --template typescript
-```
-
-## 導入ライブラリ
-
-### ESlint
-
-### Prettier
-
-### CommitLint
-
-### Storybook
-
-### Husky
-
-###
+参考チュートリアル：https://ja.reactjs.org/tutorial/tutorial.html
