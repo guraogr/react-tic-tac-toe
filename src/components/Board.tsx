@@ -3,13 +3,19 @@ import Square from './Square';
 
 const Board = () => {
   const [squares, setSquares] = useState<string[] | null[]>(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState<boolean>(true);
+
   const onSquareClick = (i: number) => {
     const copySquares = squares.slice();
     copySquares[i] = 'X';
     setSquares(copySquares);
+    setXIsNext(!xIsNext);
   };
+
   const renderSquare = (i: number) => <Square value={squares[i]} onClick={() => onSquareClick(i)} />;
-  const status = 'Next player: X';
+
+  const status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+
   return (
     <div>
       <div className="status">{status}</div>
