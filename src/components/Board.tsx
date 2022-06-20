@@ -9,6 +9,9 @@ const Board = () => {
 
   const onSquareClick = (i: number) => {
     const copySquares = squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
     copySquares[i] = xIsNext ? 'X' : 'O';
     setSquares(copySquares);
     setXIsNext(!xIsNext);
