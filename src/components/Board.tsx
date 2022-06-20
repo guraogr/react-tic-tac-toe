@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import calculateWinner from '../helper/calculateWinner';
 import { Squares } from '../type/game';
 import Square from './Square';
 
